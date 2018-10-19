@@ -57,7 +57,7 @@ export function getNotes(req, res) {
 export function editNote(req, res) {
   Note.findOne({ id: req.params.noteId })
     .then((note) => {
-      note.task = req.body.task;
+      Note.task = req.body.task;
       return note.save();
     })
     .then(() => {
